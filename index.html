@@ -185,16 +185,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -221,142 +211,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/02/git2/" itemprop="url">
-                  git
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-02T00:00:00+08:00" content="2016-08-02">
-              2016-08-02
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/learn/" itemprop="url" rel="index">
-                    <span itemprop="name">learn</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/02/git2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/git2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Git-一"><a href="#Git-一" class="headerlink" title="Git(一)"></a>Git(一)</h1><h1 id="一、建立本地库"><a href="#一、建立本地库" class="headerlink" title="一、建立本地库"></a>一、建立本地库</h1><h2 id="1-配置本地库的用户名和email。"><a href="#1-配置本地库的用户名和email。" class="headerlink" title="1.配置本地库的用户名和email。"></a>1.配置本地库的用户名和email。</h2><p><code>git config --global user.name &quot;Your Name&quot;
-git config --global user.email &quot;email@example.com&quot;</code></p>
-<h2 id="2-创建本地库。"><a href="#2-创建本地库。" class="headerlink" title="2.创建本地库。"></a>2.创建本地库。</h2><p><code>mkdir pre3 
-cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
-<p><code>pwd</code>    <em>查看本地库的位置</em></p>
-<p><code>git init</code>    <em>初始化本地库 / 把创建的这个本地库交给git管理</em></p>
-<h2 id="3-添加文件到本地库。"><a href="#3-添加文件到本地库。" class="headerlink" title="3.添加文件到本地库。"></a>3.添加文件到本地库。</h2><p><code>git add pre3.md</code>    <em>这个文件要已经位于本地库的目录里（根目录和子目录无所谓）</em></p>
-<h2 id="4-提交文件到本地库。"><a href="#4-提交文件到本地库。" class="headerlink" title="4.提交文件到本地库。"></a>4.提交文件到本地库。</h2><p><code>git commit -m &quot;wrote a pre3&quot;</code>    <em>-m “xxx” 的引号里填写的是对本次提交的文件的描述，可为任意内容</em></p>
-<h1 id="二、建立远程库"><a href="#二、建立远程库" class="headerlink" title="二、建立远程库"></a>二、建立远程库</h1><h2 id="1-创建coding-github账号。"><a href="#1-创建coding-github账号。" class="headerlink" title="1.创建coding/github账号。"></a>1.创建coding/github账号。</h2><h2 id="2-创建SSH-Key。"><a href="#2-创建SSH-Key。" class="headerlink" title="2.创建SSH Key。"></a>2.创建SSH Key。</h2><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>    <em>一路回车，可以不设密码，成功后可以在本地库的同级目录里找到.ssh文件夹，里面有id_rsa和id_rsa.pub两个文件，id_rsa是私钥，id_rsa.pub是公钥。</em></p>
-<h2 id="3-把SSH-Key的公匙添加到github。"><a href="#3-把SSH-Key的公匙添加到github。" class="headerlink" title="3.把SSH Key的公匙添加到github。"></a>3.把SSH Key的公匙添加到github。</h2><h2 id="4-创建远程库。"><a href="#4-创建远程库。" class="headerlink" title="4.创建远程库。"></a>4.创建远程库。</h2><h2 id="5-关联本地库和远程库。"><a href="#5-关联本地库和远程库。" class="headerlink" title="5.关联本地库和远程库。"></a>5.关联本地库和远程库。</h2><p><code>git remote add pre3 git@github.com:xxx/pre3.git</code>    <em>“git remote add pre3”中的”per3”是你对这个远程库的命名，可为任意值;”git@github.com:xxx/pre3.git”为你的远程库的地址</em></p>
-<h1 id="三、把本地库的所有内容推送到远程库上"><a href="#三、把本地库的所有内容推送到远程库上" class="headerlink" title="三、把本地库的所有内容推送到远程库上"></a>三、把本地库的所有内容推送到远程库上</h1><p><code>git push -u pre3 master</code>    <em>使用-u选项指定默认主机，这样以后就可以不加任何参数使用git push</em></p>
-<h1 id="四、对远程库的基本操作"><a href="#四、对远程库的基本操作" class="headerlink" title="四、对远程库的基本操作"></a>四、对远程库的基本操作</h1><h2 id="1-查看远程库名称。"><a href="#1-查看远程库名称。" class="headerlink" title="1.查看远程库名称。"></a>1.查看远程库名称。</h2><p><code>git remote</code></p>
-<h2 id="2-查看已经连接上的远程库。"><a href="#2-查看已经连接上的远程库。" class="headerlink" title="2.查看已经连接上的远程库。"></a>2.查看已经连接上的远程库。</h2><p><code>git remote -v</code></p>
-<h2 id="3-添加远程库。"><a href="#3-添加远程库。" class="headerlink" title="3.添加远程库。"></a>3.添加远程库。</h2><p><code>git remote add 你对远程库的命名 远程库地址</code>    <em>远程库地址不一定是https</em></p>
-<h2 id="4-移除远程库。"><a href="#4-移除远程库。" class="headerlink" title="4.移除远程库。"></a>4.移除远程库。</h2><p><code>git remote remove 远程库名</code></p>
-<p><strong>- 第一次使用Git 的 clone 或者 push 命令连接GitHub 时，会收到<br> 一个SSH警告，输入 <code>yes</code> 回车即可。</strong></p>
-<p><strong>-每次开启git bash后，都要手动进入自己的仓库。(cd 命令)。</strong>  </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
       
 
@@ -535,17 +389,17 @@ cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">2</span>
+              
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
