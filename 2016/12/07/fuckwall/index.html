@@ -1,11 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <title>改hosts文件实现科学上网 | Jaken Chan</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近发现身边的一些人竟然不知道如何科学上网（如hywang)，让我情不自禁地怀疑起了人生，介绍一种最简单，最廉价的方法。
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="最近发现身边的一些人竟然不知道如何科学上网（如hywang)，让我情不自禁地怀疑起了人生，介绍一种最简单，最廉价的方法。
 
 一、下载最新的hosts文件- GitHub下载链接二、用新的hosts文件替换电脑上的hosts文件-各平台 hosts 文件位置三、一些问题- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是">
 <meta property="og:type" content="article">
@@ -21,83 +100,224 @@
 <meta name="twitter:description" content="最近发现身边的一些人竟然不知道如何科学上网（如hywang)，让我情不自禁地怀疑起了人生，介绍一种最简单，最廉价的方法。
 
 一、下载最新的hosts文件- GitHub下载链接二、用新的hosts文件替换电脑上的hosts文件-各平台 hosts 文件位置三、一些问题- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是">
-  
-    <link rel="alternate" href="/atom.xml" title="Jaken Chan" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 改hosts文件实现科学上网 | Jaken Chan </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Jaken Chan</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">good good syudy,day day up.</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-fuckwall" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/07/fuckwall/" class="article-date">
-  <time datetime="2016-12-06T16:00:00.000Z" itemprop="datePublished">2016-12-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/杂项/">杂项</a>
-  </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      改hosts文件实现科学上网
-    </h1>
   
 
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be3aedb4f5abf496a89fd5c53ddd87f9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jaken Chan</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">good good syudy,day day up.</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/07/fuckwall/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jaken Chan">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                改hosts文件实现科学上网
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/07/fuckwall/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/07/fuckwall/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <blockquote>
 <p>最近发现身边的一些人竟然不知道如何科学上网（如hywang)，让我情不自禁地怀疑起了人生，介绍一种最简单，最廉价的方法。</p>
@@ -105,127 +325,310 @@
 <h2 id="一、下载最新的hosts文件"><a href="#一、下载最新的hosts文件" class="headerlink" title="一、下载最新的hosts文件"></a>一、下载最新的hosts文件</h2><h3 id="GitHub下载链接"><a href="#GitHub下载链接" class="headerlink" title="- GitHub下载链接"></a>- GitHub下载<a href="https://github.com/racaljk/hosts" title="对的，我是链接" target="_blank" rel="external">链接</a></h3><h2 id="二、用新的hosts文件替换电脑上的hosts文件"><a href="#二、用新的hosts文件替换电脑上的hosts文件" class="headerlink" title="二、用新的hosts文件替换电脑上的hosts文件"></a>二、用新的hosts文件替换电脑上的hosts文件</h2><h3 id="各平台-hosts-文件位置"><a href="#各平台-hosts-文件位置" class="headerlink" title="-各平台 hosts 文件位置"></a>-<a href="https://github.com/racaljk/hosts/wiki/%E5%90%84%E5%B9%B3%E5%8F%B0-hosts-%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE" title="是的，点我" target="_blank" rel="external">各平台 hosts 文件位置</a></h3><h2 id="三、一些问题"><a href="#三、一些问题" class="headerlink" title="三、一些问题"></a>三、一些问题</h2><h3 id="GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。"><a href="#GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。" class="headerlink" title="- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。"></a>- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的<a href="https://coding.net/u/scaffrey/p/hosts/git" title="点啊，点啊，你在想些什么？" target="_blank" rel="external">coding</a>，方法是一样的，见第一、二点。</h3><h3 id="由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。"><a href="#由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。" class="headerlink" title="- 由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。"></a>- 由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。</h3><h3 id="如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。"><a href="#如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。" class="headerlink" title="- 如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。"></a>- 如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。</h3><h3 id="是的，你不能在YouTube在线看视频。"><a href="#是的，你不能在YouTube在线看视频。" class="headerlink" title="- 是的，你不能在YouTube在线看视频。"></a>- 是的，你不能在YouTube在线看视频。</h3>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/07/fuckwall/" data-id="ciymtrj860001ic4zjkuowdih" class="article-share-link">Share</a>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/24/shanxun/" rel="next" title="newifi mini使用闪讯方法">
+                <i class="fa fa-chevron-left"></i> newifi mini使用闪讯方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/22/JC_SS_guide/" rel="prev" title="JC_SS使用说明">
+                JC_SS使用说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
-  
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<nav id="article-nav">
-  
-    <a href="/2017/01/22/JC_SS_guide/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+      <div class="ds-thread" data-thread-key="2016/12/07/fuckwall/"
+           data-title="改hosts文件实现科学上网" data-url="http://yoursite.com/2016/12/07/fuckwall/">
+      </div>
+    
+  </div>
+
+
+        </div>
         
-          JC_SS使用说明
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Jaken Chan" />
+          <p class="site-author-name" itemprop="name">Jaken Chan</p>
+          <p class="site-description motion-element" itemprop="description">jakenchans@gmail.com</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、下载最新的hosts文件"><span class="nav-number">1.</span> <span class="nav-text">一、下载最新的hosts文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub下载链接"><span class="nav-number">1.1.</span> <span class="nav-text">- GitHub下载链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、用新的hosts文件替换电脑上的hosts文件"><span class="nav-number">2.</span> <span class="nav-text">二、用新的hosts文件替换电脑上的hosts文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各平台-hosts-文件位置"><span class="nav-number">2.1.</span> <span class="nav-text">-各平台 hosts 文件位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、一些问题"><span class="nav-number">3.</span> <span class="nav-text">三、一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。"><span class="nav-number">3.1.</span> <span class="nav-text">- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。"><span class="nav-number">3.2.</span> <span class="nav-text">- 由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。"><span class="nav-number">3.3.</span> <span class="nav-text">- 如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是的，你不能在YouTube在线看视频。"><span class="nav-number">3.4.</span> <span class="nav-text">- 是的，你不能在YouTube在线看视频。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/09/24/shanxun/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">newifi mini使用闪讯方法</div>
-    </a>
-  
-</nav>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-</article>
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jaken Chan</span>
+</div>
 
-</section>
+
+
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shanxun/">shanxun</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a></li></ul>
-    </div>
-  </div>
 
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/01/FinalSpeed/">服务器安装FinalSpeed</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/22/JC_SS_guide/">JC_SS使用说明</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/07/fuckwall/">改hosts文件实现科学上网</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/24/shanxun/">newifi mini使用闪讯方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/01/git/">Git(一)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Jaken Chan<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
+
   
-</nav>
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
     
+  
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jakenchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
 </body>
 </html>
