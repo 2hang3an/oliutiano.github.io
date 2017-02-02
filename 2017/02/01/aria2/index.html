@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。
+
+按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是
+进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示
+下载http时速度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows使用aria2">
+<meta property="og:url" content="http://yoursite.com/2017/02/01/aria2/index.html">
+<meta property="og:site_name" content="Jaken Chan">
+<meta property="og:description" content="前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。
+
+按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是
+进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示
+下载http时速度">
+<meta property="og:image" content="http://i.imgur.com/n9BVIgM.jpg">
+<meta property="og:image" content="http://i.imgur.com/HoGzRXf.jpg">
+<meta property="og:image" content="http://i.imgur.com/5YHKXUf.jpg">
+<meta property="og:updated_time" content="2017-02-02T16:30:23.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="windows使用aria2">
+<meta name="twitter:description" content="前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。
+
+按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是
+进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示
+下载http时速度">
+<meta name="twitter:image" content="http://i.imgur.com/n9BVIgM.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/01/aria2/"/>
+
+
+
+
+
+  <title> windows使用aria2 | Jaken Chan </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4c1bb898497d5accf040e97ab4e24f4c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jaken Chan</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">you got a dream,you gotta protect it.</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/aria2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jaken Chan">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                windows使用aria2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T00:00:00+08:00">
+                2017-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/备忘/" itemprop="url" rel="index">
+                    <span itemprop="name">备忘</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/01/aria2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/01/aria2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。</p>
+</blockquote>
+<h3 id="按照网上的方法，下载aria2-下载webui-配置aria2-conf-配置HideRun-vbs，运行，然后信心满满的打开了webui-就是"><a href="#按照网上的方法，下载aria2-下载webui-配置aria2-conf-配置HideRun-vbs，运行，然后信心满满的打开了webui-就是" class="headerlink" title="按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是"></a>按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是</h3><p><img src="http://i.imgur.com/n9BVIgM.jpg" alt=""></p>
+<h3 id="进任务管理器看了一下，发现aria2c-exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示"><a href="#进任务管理器看了一下，发现aria2c-exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示" class="headerlink" title="进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示"></a>进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示</h3><p><img src="http://i.imgur.com/HoGzRXf.jpg" alt=""></p>
+<h3 id="下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt-发现，没下载速度？？？，这时才发现aria2-conf才是最难配的，参考了一下别人的配置文件，改了好几版"><a href="#下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt-发现，没下载速度？？？，这时才发现aria2-conf才是最难配的，参考了一下别人的配置文件，改了好几版" class="headerlink" title="下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt,发现，没下载速度？？？，这时才发现aria2.conf才是最难配的，参考了一下别人的配置文件，改了好几版"></a>下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt,发现，没下载速度？？？，这时才发现aria2.conf才是最难配的，参考了一下别人的配置文件，改了好几版</h3><p><img src="http://i.imgur.com/5YHKXUf.jpg" alt=""></p>
+<h3 id="然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。"><a href="#然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。" class="headerlink" title="然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。"></a>然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。</h3><h3 id="毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。"><a href="#毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。" class="headerlink" title="毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。"></a>毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。</h3><pre><code>## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径)
+dir=E:\Downloads\
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+#disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+file-allocation=falloc
+# 断点续传
+continue=true
+#日志
+log=G:\aria2\aria2.log
+log-level=error
+
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=5
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=10
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+#max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+max-overall-upload-limit=50
+# 单个任务上传速度限制, 默认:0
+max-upload-limit=20
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=G:\aria2\aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=G:\aria2\aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+#rpc-listen-port=6800
+# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
+#rpc-secret=&lt;TOKEN&gt;
+# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-user=&lt;USER&gt;
+# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-passwd=&lt;PASSWD&gt;
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+#listen-port=51413
+# 单个种子最大连接数, 默认:55
+#bt-max-peers=55
+# 打开DHT功能, PT需要禁用, 默认:true
+#enable-dht=false
+# 打开IPv6 DHT功能, PT需要禁用
+enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+#dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+#bt-enable-lpd=false
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=false
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+bt-request-peer-speed-limit=100K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+#seed-ratio=0
+# 强制保存会话, 即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+#force-save=false
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+bt-save-metadata=true
+
+
+
+## 其它 ##
+
+#最低连接速度，当与服务器的连接速度小于这个值时，连接被关闭
+lowest-speed-limit=10K
+#当发送一个请求，得到的回复是“文件未找到”后，重试的次数，0表示无限制
+max-file-not-found=0
+max-tries=0
+#验证使用CA证书的小伙伴的证书(好像并没有人用CA证书），默认true
+#check-certificate=false
+#http缓存控制
+http-no-cache=true
+#在bt下载时移除没有被选中的文件
+bt-remove-unselected-file=true
+#rpc加密传输
+rpc-secure=false
+#作为守护进程运行，在没有用户线程可服务时自动离开
+daemon=true
+#显示在列表中的下载项的最大数目
+max-download-result=120
+</code></pre><h3 id="现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。"><a href="#现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。" class="headerlink" title="现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。"></a>现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/22/JC_SS_guide/" rel="next" title="JC_SS使用说明">
+                <i class="fa fa-chevron-left"></i> JC_SS使用说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/01/FinalSpeed/" rel="prev" title="服务器安装FinalSpeed">
+                服务器安装FinalSpeed <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/01/aria2/"
+           data-title="windows使用aria2" data-url="http://yoursite.com/2017/02/01/aria2/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Jaken Chan" />
+          <p class="site-author-name" itemprop="name">Jaken Chan</p>
+          <p class="site-description motion-element" itemprop="description">whfh</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#按照网上的方法，下载aria2-下载webui-配置aria2-conf-配置HideRun-vbs，运行，然后信心满满的打开了webui-就是"><span class="nav-number">1.</span> <span class="nav-text">按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进任务管理器看了一下，发现aria2c-exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示"><span class="nav-number">2.</span> <span class="nav-text">进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt-发现，没下载速度？？？，这时才发现aria2-conf才是最难配的，参考了一下别人的配置文件，改了好几版"><span class="nav-number">3.</span> <span class="nav-text">下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt,发现，没下载速度？？？，这时才发现aria2.conf才是最难配的，参考了一下别人的配置文件，改了好几版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。"><span class="nav-number">4.</span> <span class="nav-text">然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。"><span class="nav-number">5.</span> <span class="nav-text">毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。"><span class="nav-number">6.</span> <span class="nav-text">现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jaken Chan</span>
+</div>
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jakenchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
