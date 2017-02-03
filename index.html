@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="whfh,jakenchan,jakenchan.cn,blog.jakenchan.cn" />
 
 
 
@@ -84,15 +84,15 @@
 
 
 
-<meta name="description" content="whfh">
+<meta name="description" content="you got a dream,you gotta protect it.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jaken Chan">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Jaken Chan">
-<meta property="og:description" content="whfh">
+<meta property="og:title" content="whfh">
+<meta property="og:url" content="http://blog.jakenchan.cn/index.html">
+<meta property="og:site_name" content="whfh">
+<meta property="og:description" content="you got a dream,you gotta protect it.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jaken Chan">
-<meta name="twitter:description" content="whfh">
+<meta name="twitter:title" content="whfh">
+<meta name="twitter:description" content="you got a dream,you gotta protect it.">
 
 
 
@@ -101,7 +101,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -110,8 +110,8 @@
     },
     algolia: {
       applicationID: '',
-      apiKey: '',
-      indexName: '',
+      apiKey: '9cedadda63a8487179edff74bc57a913',
+      indexName: 'whfh',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://blog.jakenchan.cn/"/>
 
 
 
 
 
-  <title> Jaken Chan </title>
+  <title> whfh </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,7 +169,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Jaken Chan</span>
+      <span class="site-title">whfh</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -241,7 +241,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/FinalSpeed/">
+  <link itemprop="mainEntityOfPage" href="http://blog.jakenchan.cn/2017/02/01/FinalSpeed/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jaken Chan">
@@ -250,9 +250,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="name" content="whfh">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+      <img style="display:none;" itemprop="url image" alt="whfh" src="">
     </span>
   </span>
 
@@ -335,6 +335,17 @@
 
           
           
+             <span id="/2017/02/01/FinalSpeed/" class="leancloud_visitors" data-flag-title="服务器安装FinalSpeed">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -353,22 +364,19 @@
       
         
           
-            <blockquote>
-<p>家里的假宽带看youtube1080p老是卡，只能把抛弃了好久的FinalSpeed又捡了回来。</p>
-</blockquote>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><pre><code>rm -f install_fs.sh
-wget  https://raw.githubusercontent.com/oliutiano/finalspeed/master/install_fs.sh
-chmod +x install_fs.sh
-./install_fs.sh 2&gt;&amp;1 | tee install.log
-</code></pre><h2 id="二，查看日志"><a href="#二，查看日志" class="headerlink" title="二，查看日志"></a>二，查看日志</h2><pre><code>tail -f /fs/server.log
-</code></pre><h3 id="服务端如果正常运行会有提示："><a href="#服务端如果正常运行会有提示：" class="headerlink" title="服务端如果正常运行会有提示："></a>服务端如果正常运行会有提示：</h3><blockquote>
-<p>FinalSpeed server start success</p>
-</blockquote>
-<h2 id="三、设置开机启动"><a href="#三、设置开机启动" class="headerlink" title="三、设置开机启动"></a>三、设置开机启动</h2><pre><code>chmod +x /etc/rc.local
-vi /etc/rc.local
-</code></pre><h3 id="在文件最后一行加入语句："><a href="#在文件最后一行加入语句：" class="headerlink" title="在文件最后一行加入语句："></a>在文件最后一行加入语句：</h3><pre><code>sh /fs/start.sh
-</code></pre><h3 id="保存，退出。"><a href="#保存，退出。" class="headerlink" title="保存，退出。"></a>保存，退出。</h3><h2 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h2><h3 id="加速效果还行，以家里的缩水100M宽带来讲，配置好电脑端以后，加速前3MbpS的连接速度，加速后，能达到27Mbps-可以看4K。"><a href="#加速效果还行，以家里的缩水100M宽带来讲，配置好电脑端以后，加速前3MbpS的连接速度，加速后，能达到27Mbps-可以看4K。" class="headerlink" title="加速效果还行，以家里的缩水100M宽带来讲，配置好电脑端以后，加速前3MbpS的连接速度，加速后，能达到27Mbps,可以看4K。"></a>加速效果还行，以家里的缩水100M宽带来讲，配置好电脑端以后，加速前3MbpS的连接速度，加速后，能达到27Mbps,可以看4K。<img src="http://i.imgur.com/41SS3QI.jpg" alt=""></h3>
           
+家里的假宽带看youtube1080p老是卡，只能把抛弃了好久的FinalSpeed又捡了回来。
+
+一、安装rm -f install_fs.sh
+wget  https://raw.githubusercontent.com/oliutiano/finalspeed/master/install
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/01/FinalSpeed/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -405,7 +413,7 @@ vi /etc/rc.local
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/aria2/">
+  <link itemprop="mainEntityOfPage" href="http://blog.jakenchan.cn/2017/02/01/aria2/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jaken Chan">
@@ -414,9 +422,9 @@ vi /etc/rc.local
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="name" content="whfh">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+      <img style="display:none;" itemprop="url image" alt="whfh" src="">
     </span>
   </span>
 
@@ -499,6 +507,17 @@ vi /etc/rc.local
 
           
           
+             <span id="/2017/02/01/aria2/" class="leancloud_visitors" data-flag-title="windows使用aria2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -517,138 +536,19 @@ vi /etc/rc.local
       
         
           
-            <blockquote>
-<p>前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。</p>
-</blockquote>
-<h3 id="按照网上的方法，下载aria2-下载webui-配置aria2-conf-配置HideRun-vbs，运行，然后信心满满的打开了webui-就是"><a href="#按照网上的方法，下载aria2-下载webui-配置aria2-conf-配置HideRun-vbs，运行，然后信心满满的打开了webui-就是" class="headerlink" title="按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是"></a>按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是</h3><p><img src="http://i.imgur.com/n9BVIgM.jpg" alt=""></p>
-<h3 id="进任务管理器看了一下，发现aria2c-exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示"><a href="#进任务管理器看了一下，发现aria2c-exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示" class="headerlink" title="进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示"></a>进任务管理器看了一下，发现aria2c.exe根本没有运行，又改了好一会，终于在webui里看到了连接成功的提示</h3><p><img src="http://i.imgur.com/HoGzRXf.jpg" alt=""></p>
-<h3 id="下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt-发现，没下载速度？？？，这时才发现aria2-conf才是最难配的，参考了一下别人的配置文件，改了好几版"><a href="#下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt-发现，没下载速度？？？，这时才发现aria2-conf才是最难配的，参考了一下别人的配置文件，改了好几版" class="headerlink" title="下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt,发现，没下载速度？？？，这时才发现aria2.conf才是最难配的，参考了一下别人的配置文件，改了好几版"></a>下载http时速度很不错，但没我idm快，并没有什么用；随手下载了一个bt,发现，没下载速度？？？，这时才发现aria2.conf才是最难配的，参考了一下别人的配置文件，改了好几版</h3><p><img src="http://i.imgur.com/5YHKXUf.jpg" alt=""></p>
-<h3 id="然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。"><a href="#然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。" class="headerlink" title="然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。"></a>然而并没有起多大作用，只好去官网看英文版的用户手册，大致弄清楚了一些常用参数的作用后，又重新改了一下配置文件，bt速度终于能看了，但最高也只有几百K每秒，同样的资源迅雷1M多每秒，从速度上来看，并不能取代迅雷。</h3><h3 id="毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。"><a href="#毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。" class="headerlink" title="毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。"></a>毫无疑问aria2是非常优秀的下载软件，但在windows上水土不服，出现上述情况的原因与我的配置文件也有很大关系，贴一下配置文件，留念，备忘，方便以后来修改。</h3><pre><code>## 文件保存相关 ##
-
-# 文件的保存路径(可使用绝对路径或相对路径)
-dir=E:\Downloads\
-# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
-#disk-cache=32M
-# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
-# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
-# falloc和trunc则需要文件系统和内核支持
-# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
-file-allocation=falloc
-# 断点续传
-continue=true
-#日志
-log=G:\aria2\aria2.log
-log-level=error
-
-
-## 下载连接相关 ##
-
-# 最大同时下载任务数, 运行时可修改, 默认:5
-max-concurrent-downloads=5
-# 同一服务器连接数, 添加时可指定, 默认:1
-max-connection-per-server=10
-# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
-# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
-min-split-size=10M
-# 单个任务最大线程数, 添加时可指定, 默认:5
-split=5
-# 整体下载速度限制, 运行时可修改, 默认:0
-#max-overall-download-limit=0
-# 单个任务下载速度限制, 默认:0
-#max-download-limit=0
-# 整体上传速度限制, 运行时可修改, 默认:0
-max-overall-upload-limit=50
-# 单个任务上传速度限制, 默认:0
-max-upload-limit=20
-# 禁用IPv6, 默认:false
-disable-ipv6=true
-
-## 进度保存相关 ##
-
-# 从会话文件中读取下载任务
-input-file=G:\aria2\aria2.session
-# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
-save-session=G:\aria2\aria2.session
-# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
-save-session-interval=60
-
-## RPC相关设置 ##
-
-# 启用RPC, 默认:false
-enable-rpc=true
-# 允许所有来源, 默认:false
-rpc-allow-origin-all=true
-# 允许非外部访问, 默认:false
-rpc-listen-all=true
-# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
-#event-poll=select
-# RPC监听端口, 端口被占用时可以修改, 默认:6800
-#rpc-listen-port=6800
-# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
-#rpc-secret=&lt;TOKEN&gt;
-# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
-#rpc-user=&lt;USER&gt;
-# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
-#rpc-passwd=&lt;PASSWD&gt;
-
-## BT/PT下载相关 ##
-
-# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
-follow-torrent=true
-# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
-#listen-port=51413
-# 单个种子最大连接数, 默认:55
-#bt-max-peers=55
-# 打开DHT功能, PT需要禁用, 默认:true
-#enable-dht=false
-# 打开IPv6 DHT功能, PT需要禁用
-enable-dht6=false
-# DHT网络监听端口, 默认:6881-6999
-#dht-listen-port=6881-6999
-# 本地节点查找, PT需要禁用, 默认:false
-#bt-enable-lpd=false
-# 种子交换, PT需要禁用, 默认:true
-enable-peer-exchange=false
-# 每个种子限速, 对少种的PT很有用, 默认:50K
-bt-request-peer-speed-limit=100K
-# 客户端伪装, PT需要
-peer-id-prefix=-TR2770-
-user-agent=Transmission/2.77
-# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
-#seed-ratio=0
-# 强制保存会话, 即使任务已经完成, 默认:false
-# 较新的版本开启后会在任务完成后依然保留.aria2文件
-#force-save=false
-# BT校验相关, 默认:true
-#bt-hash-check-seed=true
-# 继续之前的BT任务时, 无需再次校验, 默认:false
-bt-seed-unverified=true
-# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
-bt-save-metadata=true
-
-
-
-## 其它 ##
-
-#最低连接速度，当与服务器的连接速度小于这个值时，连接被关闭
-lowest-speed-limit=10K
-#当发送一个请求，得到的回复是“文件未找到”后，重试的次数，0表示无限制
-max-file-not-found=0
-max-tries=0
-#验证使用CA证书的小伙伴的证书(好像并没有人用CA证书），默认true
-#check-certificate=false
-#http缓存控制
-http-no-cache=true
-#在bt下载时移除没有被选中的文件
-bt-remove-unselected-file=true
-#rpc加密传输
-rpc-secure=false
-#作为守护进程运行，在没有用户线程可服务时自动离开
-daemon=true
-#显示在列表中的下载项的最大数目
-max-download-result=120
-</code></pre><h3 id="现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。"><a href="#现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。" class="headerlink" title="现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。"></a>现在我的感觉是，其实迅雷还是不错的。虽然界面丑，体验差，但至少限速不是那么明显。</h3>
           
+前几天找到方法取代了百度云客户端，最近看迅雷也不是很顺眼，就开始摸索着配置起了下载神器aria2，想把迅雷也卸载了。
+
+按照网上的方法，下载aria2,下载webui,配置aria2.conf,配置HideRun.vbs，运行，然后信心满满的打开了webui,就是
+进任务管理器看了一下，发现ari
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/01/aria2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -685,7 +585,7 @@ max-download-result=120
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/26/baiduyun/">
+  <link itemprop="mainEntityOfPage" href="http://blog.jakenchan.cn/2017/01/26/baiduyun/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jaken Chan">
@@ -694,9 +594,9 @@ max-download-result=120
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="name" content="whfh">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+      <img style="display:none;" itemprop="url image" alt="whfh" src="">
     </span>
   </span>
 
@@ -779,6 +679,17 @@ max-download-result=120
 
           
           
+             <span id="/2017/01/26/baiduyun/" class="leancloud_visitors" data-flag-title="百度云大文件下载破解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -797,17 +708,19 @@ max-download-result=120
       
         
           
-            <blockquote>
-<p>各种百度云破解版一年换了几个，还是老被限速，所以决定不用百度云客户端了，于是就找到了如下的解决方案。</p>
-</blockquote>
-<h3 id="不用客户端的话，只能下载单个的小文件，当尝试下载文件夹或大文件时，百度会很友好的弹窗提醒你，安装客户端才能下载。"><a href="#不用客户端的话，只能下载单个的小文件，当尝试下载文件夹或大文件时，百度会很友好的弹窗提醒你，安装客户端才能下载。" class="headerlink" title="不用客户端的话，只能下载单个的小文件，当尝试下载文件夹或大文件时，百度会很友好的弹窗提醒你，安装客户端才能下载。"></a>不用客户端的话，只能下载单个的小文件，当尝试下载文件夹或大文件时，百度会很友好的弹窗提醒你，安装客户端才能下载。</h3><p><img src="http://i.imgur.com/RW8WZrf.jpg" alt=""></p>
-<h3 id="然后就是著名的一行代码"><a href="#然后就是著名的一行代码" class="headerlink" title="然后就是著名的一行代码"></a>然后就是著名的一行代码</h3><p> <code>Object.defineProperty(this , &#39;navigator&#39; , {value: { platform: &quot;&quot; }});</code></p>
-<h3 id="按f12-在console里输入后，就可以下载大文件了（文件夹会被自动打包成一个-zip文件，下载后解压时有时会有警告或错误，但文件不受任何影响）。"><a href="#按f12-在console里输入后，就可以下载大文件了（文件夹会被自动打包成一个-zip文件，下载后解压时有时会有警告或错误，但文件不受任何影响）。" class="headerlink" title="按f12,在console里输入后，就可以下载大文件了（文件夹会被自动打包成一个.zip文件，下载后解压时有时会有警告或错误，但文件不受任何影响）。"></a>按f12,在console里输入后，就可以下载大文件了（文件夹会被自动打包成一个.zip文件，下载后解压时有时会有警告或错误，但文件不受任何影响）。</h3><p><img src="http://i.imgur.com/TwLY600.jpg" alt=""></p>
-<h3 id="后来有个大表哥把一行代码改成了六行（有效的美化了输入代码后的console界面）"><a href="#后来有个大表哥把一行代码改成了六行（有效的美化了输入代码后的console界面）" class="headerlink" title="后来有个大表哥把一行代码改成了六行（有效的美化了输入代码后的console界面）"></a>后来有个大表哥把一行代码改成了六行（有效的美化了输入代码后的console界面）</h3><p> <code>console.log(&quot;Don&#39;t be evil!&quot;);</code><br> <code>var actualCode = &quot;Object.defineProperty(navigator,&#39;platform&#39;,{get:function(){return &#39;这里随便吧&#39;;}});&quot;;</code><br> <code>var s = document.createElement(&#39;script&#39;);</code><br> <code>s.textContent = actualCode;</code><br>   <code>document.documentElement.appendChild(s);</code><br> <code>s.remove();</code></p>
-<h3 id="并顺手把这六行代码做成了一个Chrome插件"><a href="#并顺手把这六行代码做成了一个Chrome插件" class="headerlink" title="并顺手把这六行代码做成了一个Chrome插件"></a>并顺手把这六行代码做成了一个Chrome插件</h3><p><img src="http://i.imgur.com/waDE7im.jpg" alt=""></p>
-<h3 id="插件刚刚上传到Chrome应用商店，现在还搜索不到，只能通过直接链接去找到，不出意外的话，过几天应该就能通过应用商店搜索添加了。"><a href="#插件刚刚上传到Chrome应用商店，现在还搜索不到，只能通过直接链接去找到，不出意外的话，过几天应该就能通过应用商店搜索添加了。" class="headerlink" title="插件刚刚上传到Chrome应用商店，现在还搜索不到，只能通过直接链接去找到，不出意外的话，过几天应该就能通过应用商店搜索添加了。"></a>插件刚刚上传到Chrome应用商店，现在还搜索不到，只能通过<a href="https://chrome.google.com/webstore/detail/jnodfjpjimimdaikplcmpoknojongked" title="是的，我是链接" target="_blank" rel="external">直接链接</a>去找到，不出意外的话，过几天应该就能通过应用商店搜索添加了。</h3><h3 id="我用的是idm-这个资源的话，下载速度2-3M-S-迅雷应该会更快，这对限速云来说已经是一个非常可观的速度了。"><a href="#我用的是idm-这个资源的话，下载速度2-3M-S-迅雷应该会更快，这对限速云来说已经是一个非常可观的速度了。" class="headerlink" title="我用的是idm,这个资源的话，下载速度2-3M/S,迅雷应该会更快，这对限速云来说已经是一个非常可观的速度了。"></a>我用的是idm,这个资源的话，下载速度2-3M/S,迅雷应该会更快，这对限速云来说已经是一个非常可观的速度了。</h3><p><img src="http://i.imgur.com/5gdwGxv.jpg" alt=""></p>
-<h3 id="此插件已经开源，github地址。"><a href="#此插件已经开源，github地址。" class="headerlink" title="此插件已经开源，github地址。"></a>此插件已经开源，<a href="https://github.com/cloudroc/baidu-nolimit" title="点我，我是链接" target="_blank" rel="external">github地址</a>。</h3><h3 id="如果需要10M-S甚至30M-S的下载速度的话，可以关注一下另一个大表哥的开源项目-github地址，这个软件现有版本已被和谐，新版本正在内部测试-稳定后会更新到github"><a href="#如果需要10M-S甚至30M-S的下载速度的话，可以关注一下另一个大表哥的开源项目-github地址，这个软件现有版本已被和谐，新版本正在内部测试-稳定后会更新到github" class="headerlink" title="如果需要10M/S甚至30M/S的下载速度的话，可以关注一下另一个大表哥的开源项目,github地址，这个软件现有版本已被和谐，新版本正在内部测试,稳定后会更新到github."></a>如果需要10M/S甚至30M/S的下载速度的话，可以关注一下另一个大表哥的开源项目,<a href="https://github.com/Mrs4s/BaiduPanDownload" title="点，点，点" target="_blank" rel="external">github地址</a>，这个软件现有版本已被和谐，新版本正在内部测试,稳定后会更新到github.</h3>
           
+各种百度云破解版一年换了几个，还是老被限速，所以决定不用百度云客户端了，于是就找到了如下的解决方案。
+
+不用客户端的话，只能下载单个的小文件，当尝试下载文件夹或大文件时，百度会很友好的弹窗提醒你，安装客户端才能下载。
+然后就是著名的一行代码 Object.defineProperty(this ,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/26/baiduyun/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -844,7 +757,7 @@ max-download-result=120
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/22/JC_SS_guide/">
+  <link itemprop="mainEntityOfPage" href="http://blog.jakenchan.cn/2017/01/22/JC_SS_guide/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jaken Chan">
@@ -853,9 +766,9 @@ max-download-result=120
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="name" content="whfh">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+      <img style="display:none;" itemprop="url image" alt="whfh" src="">
     </span>
   </span>
 
@@ -938,6 +851,17 @@ max-download-result=120
 
           
           
+             <span id="/2017/01/22/JC_SS_guide/" class="leancloud_visitors" data-flag-title="JC_SS使用说明">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -956,12 +880,18 @@ max-download-result=120
       
         
           
-            <blockquote>
-<p>分享自己的ss服务器，有需要的小伙伴注册之前一定要先看一下使用说明：</p>
-</blockquote>
-<h2 id="一、注册，获取ss账号"><a href="#一、注册，获取ss账号" class="headerlink" title="一、注册，获取ss账号"></a>一、注册，获取ss账号</h2><h3 id="注册地址"><a href="#注册地址" class="headerlink" title="- 注册地址"></a>- <a href="http://ss.jakenchan.cn/" title="对的，我是链接" target="_blank" rel="external">注册地址</a></h3><h3 id="注意："><a href="#注意：" class="headerlink" title="-注意："></a>-注意：</h3><h4 id="–-注册邮箱不能是qq邮箱，其它的邮箱都可以"><a href="#–-注册邮箱不能是qq邮箱，其它的邮箱都可以" class="headerlink" title="– 注册邮箱不能是qq邮箱，其它的邮箱都可以"></a>– 注册邮箱不能是qq邮箱，其它的邮箱都可以</h4><h4 id="–-注册所需的邀请码在网站的邀请码页面获取，网站计划总用户数量为60人，网站邀请码页面一共会放出20个以jaken开头的邀请码，每个用户注册后可以邀请一人，已经有ss账号的最好把机会留给更需要的人。"><a href="#–-注册所需的邀请码在网站的邀请码页面获取，网站计划总用户数量为60人，网站邀请码页面一共会放出20个以jaken开头的邀请码，每个用户注册后可以邀请一人，已经有ss账号的最好把机会留给更需要的人。" class="headerlink" title="– 注册所需的邀请码在网站的邀请码页面获取，网站计划总用户数量为60人，网站邀请码页面一共会放出20个以jaken开头的邀请码，每个用户注册后可以邀请一人，已经有ss账号的最好把机会留给更需要的人。"></a>– 注册所需的邀请码在网站的<a href="http://ss.jakenchan.cn/code" title="是的，点我" target="_blank" rel="external">邀请码</a>页面获取，网站计划总用户数量为60人，网站邀请码页面一共会放出20个以jaken开头的邀请码，每个用户注册后可以邀请一人，已经有ss账号的最好把机会留给更需要的人。</h4><h2 id="二、下载ssr客户端"><a href="#二、下载ssr客户端" class="headerlink" title="二、下载ssr客户端"></a>二、下载ssr客户端</h2><h3 id="从GitHub链接里下载对应的客户端"><a href="#从GitHub链接里下载对应的客户端" class="headerlink" title="- 从GitHub链接里下载对应的客户端"></a>- 从<a href="https://github.com/breakwa11/shadowsocks-rss" title="这里是链接" target="_blank" rel="external">GitHub链接</a>里下载对应的客户端</h3><h2 id="三、配置ssr客户端"><a href="#三、配置ssr客户端" class="headerlink" title="三、配置ssr客户端"></a>三、配置ssr客户端</h2><h3 id="win客户端配置如下图，圈红圈的四个地方都是你要根据自己的账户信息去填写的，端口，密码，加密方式在“用户中心”，服务器ip在“节点列表”。下面四个紫色的参数要与图片中的一致。点击确定后在状态栏找到小飞机图标，右键，系统代理模式，选择PAC模式，完成。"><a href="#win客户端配置如下图，圈红圈的四个地方都是你要根据自己的账户信息去填写的，端口，密码，加密方式在“用户中心”，服务器ip在“节点列表”。下面四个紫色的参数要与图片中的一致。点击确定后在状态栏找到小飞机图标，右键，系统代理模式，选择PAC模式，完成。" class="headerlink" title="- win客户端配置如下图，圈红圈的四个地方都是你要根据自己的账户信息去填写的，端口，密码，加密方式在“用户中心”，服务器ip在“节点列表”。下面四个紫色的参数要与图片中的一致。点击确定后在状态栏找到小飞机图标，右键，系统代理模式，选择PAC模式，完成。"></a>- win客户端配置如下图，圈红圈的四个地方都是你要根据自己的账户信息去填写的，端口，密码，加密方式在“用户中心”，服务器ip在“节点列表”。下面四个紫色的参数要与图片中的一致。点击确定后在状态栏找到小飞机图标，右键，系统代理模式，选择PAC模式，完成。</h3><p><img src="http://i.imgur.com/9EbCGFT.jpg" alt=""></p>
-<h3 id="android客户端配置，如果你已经配置好了win客户端，点击上图ssr链接的内容，可以生成一个二维码，用安卓端通过扫描二维码的方式添加即可，你也可以手动输入与win客户端一样的参数以完成配置。"><a href="#android客户端配置，如果你已经配置好了win客户端，点击上图ssr链接的内容，可以生成一个二维码，用安卓端通过扫描二维码的方式添加即可，你也可以手动输入与win客户端一样的参数以完成配置。" class="headerlink" title="- android客户端配置，如果你已经配置好了win客户端，点击上图ssr链接的内容，可以生成一个二维码，用安卓端通过扫描二维码的方式添加即可，你也可以手动输入与win客户端一样的参数以完成配置。"></a>- android客户端配置，如果你已经配置好了win客户端，点击上图ssr链接的内容，可以生成一个二维码，用安卓端通过扫描二维码的方式添加即可，你也可以手动输入与win客户端一样的参数以完成配置。</h3><h3 id="mac客户端-iphone客户端自行配置，方法几乎一样。"><a href="#mac客户端-iphone客户端自行配置，方法几乎一样。" class="headerlink" title="- mac客户端,iphone客户端自行配置，方法几乎一样。"></a>- mac客户端,iphone客户端自行配置，方法几乎一样。</h3><h2 id="三、一些问题"><a href="#三、一些问题" class="headerlink" title="三、一些问题"></a>三、一些问题</h2><h3 id="关于服务器，如果不出什么意外和问题的话，这个服务器会一直开放下去，供大家使用。"><a href="#关于服务器，如果不出什么意外和问题的话，这个服务器会一直开放下去，供大家使用。" class="headerlink" title="- 关于服务器，如果不出什么意外和问题的话，这个服务器会一直开放下去，供大家使用。"></a>- 关于服务器，如果不出什么意外和问题的话，这个服务器会一直开放下去，供大家使用。</h3><h3 id="关于网速，以前使用ss单用户版的时候，网速通过协议手段优化后可以达到20Mbps，这次的ssr多用户版我也是第一次使用，不是很了解，只做了一点优化，实测网速只能达到6Mbps左右，已经用了两天，虽然不是非常快但足够日常使用，后期随着用户数量增加不知道网速会不会下降。"><a href="#关于网速，以前使用ss单用户版的时候，网速通过协议手段优化后可以达到20Mbps，这次的ssr多用户版我也是第一次使用，不是很了解，只做了一点优化，实测网速只能达到6Mbps左右，已经用了两天，虽然不是非常快但足够日常使用，后期随着用户数量增加不知道网速会不会下降。" class="headerlink" title="- 关于网速，以前使用ss单用户版的时候，网速通过协议手段优化后可以达到20Mbps，这次的ssr多用户版我也是第一次使用，不是很了解，只做了一点优化，实测网速只能达到6Mbps左右，已经用了两天，虽然不是非常快但足够日常使用，后期随着用户数量增加不知道网速会不会下降。"></a>- 关于网速，以前使用ss单用户版的时候，网速通过协议手段优化后可以达到20Mbps，这次的ssr多用户版我也是第一次使用，不是很了解，只做了一点优化，实测网速只能达到6Mbps左右，已经用了两天，虽然不是非常快但足够日常使用，后期随着用户数量增加不知道网速会不会下降。</h3><h3 id="关于客户端，虽然服务器部署的是ssr-但设置成了兼容ss-你也可以通过ss客户端去使用服务，配置会简单很多，但网速等各方面会受到不同程度的影响，推荐使用ssr客户端。"><a href="#关于客户端，虽然服务器部署的是ssr-但设置成了兼容ss-你也可以通过ss客户端去使用服务，配置会简单很多，但网速等各方面会受到不同程度的影响，推荐使用ssr客户端。" class="headerlink" title="- 关于客户端，虽然服务器部署的是ssr,但设置成了兼容ss,你也可以通过ss客户端去使用服务，配置会简单很多，但网速等各方面会受到不同程度的影响，推荐使用ssr客户端。"></a>- 关于客户端，虽然服务器部署的是ssr,但设置成了兼容ss,你也可以通过ss客户端去使用服务，配置会简单很多，但网速等各方面会受到不同程度的影响，推荐使用ssr客户端。</h3>
           
+分享自己的ss服务器，有需要的小伙伴注册之前一定要先看一下使用说明：
+
+一、注册，获取ss账号- 注册地址-注意：– 注册邮箱不能是qq邮箱，其它的邮箱都可以– 注册所需的邀请码在网站的邀请码页面获取，网站计划总用户数量为60人，网站邀请码页面一共会放出20个以jaken开头的邀请码，每个用户注册
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/22/JC_SS_guide/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -998,7 +928,7 @@ max-download-result=120
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/07/letv_cloud/">
+  <link itemprop="mainEntityOfPage" href="http://blog.jakenchan.cn/2017/01/07/letv_cloud/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Jaken Chan">
@@ -1007,9 +937,9 @@ max-download-result=120
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
+    <meta itemprop="name" content="whfh">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
+      <img style="display:none;" itemprop="url image" alt="whfh" src="">
     </span>
   </span>
 
@@ -1092,162 +1022,16 @@ max-download-result=120
 
           
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>网上找到的乐视云视频真实地址获取方法，写出来备忘</p>
-</blockquote>
-<h3 id="这是我要下载视频的网站，从水印和详情中可以看到视频服务提供商是乐视云，但是视频基于flash-idm等下载器并不能下载。"><a href="#这是我要下载视频的网站，从水印和详情中可以看到视频服务提供商是乐视云，但是视频基于flash-idm等下载器并不能下载。" class="headerlink" title="这是我要下载视频的网站，从水印和详情中可以看到视频服务提供商是乐视云，但是视频基于flash,idm等下载器并不能下载。"></a>这是我要下载视频的网站，从水印和详情中可以看到视频服务提供商是乐视云，但是视频基于flash,idm等下载器并不能下载。</h3><p><img src="http://i.imgur.com/lJC6zJp.jpg" alt=""></p>
-<h3 id="f12审查元素，搜索uu"><a href="#f12审查元素，搜索uu" class="headerlink" title="f12审查元素，搜索uu=,"></a>f12审查元素，搜索<code>uu=</code>,</h3><p><img src="http://i.imgur.com/p6AItFv.jpg" alt=""></p>
-<h3 id="在代码中找到字段uu-xxxxxxxxxx-amp-vu-xxxxxxxxxx-图中的这个视频的值是uu-d8b5cc8a72-amp-vu-7ed2e97c61，把这个参数加到乐视云平台地址http-yuntv-letv-com-bcloud-html-后面，得到完整的视频地址为http-yuntv-letv-com-bcloud-html-uu-d8b5cc8a72-amp-vu-7ed2e97c61，如图："><a href="#在代码中找到字段uu-xxxxxxxxxx-amp-vu-xxxxxxxxxx-图中的这个视频的值是uu-d8b5cc8a72-amp-vu-7ed2e97c61，把这个参数加到乐视云平台地址http-yuntv-letv-com-bcloud-html-后面，得到完整的视频地址为http-yuntv-letv-com-bcloud-html-uu-d8b5cc8a72-amp-vu-7ed2e97c61，如图：" class="headerlink" title="在代码中找到字段uu=xxxxxxxxxx&amp;vu=xxxxxxxxxx,图中的这个视频的值是uu=d8b5cc8a72&amp;vu=7ed2e97c61，把这个参数加到乐视云平台地址http://yuntv.letv.com/bcloud.html?后面，得到完整的视频地址为http://yuntv.letv.com/bcloud.html?uu=d8b5cc8a72&amp;vu=7ed2e97c61，如图："></a>在代码中找到字段<code>uu=xxxxxxxxxx&amp;vu=xxxxxxxxxx</code>,图中的这个视频的值是<code>uu=d8b5cc8a72&amp;vu=7ed2e97c61</code>，把这个参数加到乐视云平台地址<code>http://yuntv.letv.com/bcloud.html?</code>后面，得到完整的视频地址为<code>http://yuntv.letv.com/bcloud.html?uu=d8b5cc8a72&amp;vu=7ed2e97c61</code>，如图：</h3><p><img src="http://i.imgur.com/7tdzyQI.jpg" alt=""></p>
-<h3 id="然后就能愉快的下载视频了"><a href="#然后就能愉快的下载视频了" class="headerlink" title="然后就能愉快的下载视频了"></a>然后就能愉快的下载视频了</h3><p><img src="http://i.imgur.com/goOTTcQ.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/07/fuckwall/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Jaken Chan">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/07/fuckwall/" itemprop="url">
-                  改hosts文件实现科学上网
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T00:00:00+08:00">
-                2016-12-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂项/" itemprop="url" rel="index">
-                    <span itemprop="name">杂项</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/07/fuckwall/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/07/fuckwall/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
+             <span id="/2017/01/07/letv_cloud/" class="leancloud_visitors" data-flag-title="乐视云视频真实地址获取">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -1267,328 +1051,20 @@ max-download-result=120
       
         
           
-            <blockquote>
-<p>最近发现身边的一些人竟然不知道如何科学上网（如hywang)，让我情不自禁地怀疑起了人生，介绍一种最简单，最廉价的方法。</p>
-</blockquote>
-<h2 id="一、下载最新的hosts文件"><a href="#一、下载最新的hosts文件" class="headerlink" title="一、下载最新的hosts文件"></a>一、下载最新的hosts文件</h2><h3 id="GitHub下载链接"><a href="#GitHub下载链接" class="headerlink" title="- GitHub下载链接"></a>- GitHub下载<a href="https://github.com/racaljk/hosts" title="对的，我是链接" target="_blank" rel="external">链接</a></h3><h2 id="二、用新的hosts文件替换电脑上的hosts文件"><a href="#二、用新的hosts文件替换电脑上的hosts文件" class="headerlink" title="二、用新的hosts文件替换电脑上的hosts文件"></a>二、用新的hosts文件替换电脑上的hosts文件</h2><h3 id="各平台-hosts-文件位置"><a href="#各平台-hosts-文件位置" class="headerlink" title="-各平台 hosts 文件位置"></a>-<a href="https://github.com/racaljk/hosts/wiki/%E5%90%84%E5%B9%B3%E5%8F%B0-hosts-%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE" title="是的，点我" target="_blank" rel="external">各平台 hosts 文件位置</a></h3><h2 id="三、一些问题"><a href="#三、一些问题" class="headerlink" title="三、一些问题"></a>三、一些问题</h2><h3 id="GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。"><a href="#GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。" class="headerlink" title="- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的coding，方法是一样的，见第一、二点。"></a>- GitHub是不需要fanqiang的，如果你上不去，可能是网速太慢或者人品出了问题。你可以试试国内同款的<a href="https://coding.net/u/scaffrey/p/hosts/git" title="点啊，点啊，你在想些什么？" target="_blank" rel="external">coding</a>，方法是一样的，见第一、二点。</h3><h3 id="由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。"><a href="#由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。" class="headerlink" title="- 由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。"></a>- 由于某些不可描述的原因，hosts会有时效性，如果有一天你发现自己不能科学上网了，把第一、二点重复一下。</h3><h3 id="如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。"><a href="#如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。" class="headerlink" title="- 如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。"></a>- 如果你并不知道怎么把hosts文件下载下来，那你就把hosts文件里的代码粘贴复制覆盖你原来的hosts文件。</h3><h3 id="是的，你不能在YouTube在线看视频。"><a href="#是的，你不能在YouTube在线看视频。" class="headerlink" title="- 是的，你不能在YouTube在线看视频。"></a>- 是的，你不能在YouTube在线看视频。</h3>
           
-        
-      
-    </div>
+网上找到的乐视云视频真实地址获取方法，写出来备忘
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/24/shanxun/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Jaken Chan">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/24/shanxun/" itemprop="url">
-                  newifi mini使用闪讯方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-24T00:00:00+08:00">
-                2016-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/something/" itemprop="url" rel="index">
-                    <span itemprop="name">something</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/09/24/shanxun/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/24/shanxun/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一、下载所需文件"><a href="#一、下载所需文件" class="headerlink" title="一、下载所需文件"></a>一、下载所需文件</h2><h3 id="下载newifi刷机工具，百度云链接-密码：jz7o"><a href="#下载newifi刷机工具，百度云链接-密码：jz7o" class="headerlink" title="- 下载newifi刷机工具，百度云链接 密码：jz7o"></a>- 下载newifi刷机工具，<a href="http://pan.baidu.com/s/1bpj2cXL" title="是的，点我下载" target="_blank" rel="external">百度云链接</a> 密码：jz7o</h3><h3 id="下载我做好的路由器固件，百度云链接-密码：sk53"><a href="#下载我做好的路由器固件，百度云链接-密码：sk53" class="headerlink" title="- 下载我做好的路由器固件，百度云链接 密码：sk53"></a>- 下载我做好的路由器固件，<a href="http://pan.baidu.com/s/1c2ojMnA" title="还是点我下载" target="_blank" rel="external">百度云链接</a> 密码：sk53</h3><h2 id="二、路由器刷机"><a href="#二、路由器刷机" class="headerlink" title="二、路由器刷机"></a>二、路由器刷机</h2><h3 id="解压路由器固件，用网线将路由器与电脑连接，双击运行刷机工具，选择“高级恢复”，选择解压后的路由器固件，按照提示将固件刷入路由器。"><a href="#解压路由器固件，用网线将路由器与电脑连接，双击运行刷机工具，选择“高级恢复”，选择解压后的路由器固件，按照提示将固件刷入路由器。" class="headerlink" title="- 解压路由器固件，用网线将路由器与电脑连接，双击运行刷机工具，选择“高级恢复”，选择解压后的路由器固件，按照提示将固件刷入路由器。"></a>- 解压路由器固件，用网线将路由器与电脑连接，双击运行刷机工具，选择“高级恢复”，选择解压后的路由器固件，按照提示将固件刷入路由器。</h3><h2 id="三、路由器配置"><a href="#三、路由器配置" class="headerlink" title="三、路由器配置"></a>三、路由器配置</h2><h3 id="重启路由器，用网线将路由器与电脑连接，进入路由器的管理界面，登陆，在”接口”–”WAN”处填写自己闪讯的账号和密码，”保存并应用”，重启路由器。你会发现自己的电脑已经连接上网络。"><a href="#重启路由器，用网线将路由器与电脑连接，进入路由器的管理界面，登陆，在”接口”–”WAN”处填写自己闪讯的账号和密码，”保存并应用”，重启路由器。你会发现自己的电脑已经连接上网络。" class="headerlink" title="- 重启路由器，用网线将路由器与电脑连接，进入路由器的管理界面，登陆，在”接口”–”WAN”处填写自己闪讯的账号和密码，”保存并应用”，重启路由器。你会发现自己的电脑已经连接上网络。"></a>- 重启路由器，用网线将路由器与电脑连接，进入路由器的<a href="http://192.168.1.1" title="点一下进路由器管理界面" target="_blank" rel="external">管理界面</a>，登陆，在”接口”–”WAN”处填写自己闪讯的账号和密码，”保存并应用”，重启路由器。你会发现自己的电脑已经连接上网络。</h3><h2 id="四、关于密码"><a href="#四、关于密码" class="headerlink" title="四、关于密码"></a>四、关于密码</h2><h3 id="路由器固件的解压密码为”姓名拼音-qq号”，路由器管理员密码、wifi密码为qq号。不建议陌生人使用。"><a href="#路由器固件的解压密码为”姓名拼音-qq号”，路由器管理员密码、wifi密码为qq号。不建议陌生人使用。" class="headerlink" title="- 路由器固件的解压密码为”姓名拼音+qq号”，路由器管理员密码、wifi密码为qq号。不建议陌生人使用。"></a>- 路由器固件的解压密码为”姓名拼音+qq号”，路由器管理员密码、wifi密码为qq号。不建议陌生人使用。</h3><h3 id="闪讯密码最好为固定密码。"><a href="#闪讯密码最好为固定密码。" class="headerlink" title="- 闪讯密码最好为固定密码。"></a>- 闪讯密码最好为固定密码。</h3><h3 id="临时密码的话，只要路由器不断电，可以一直使用而不会过期。"><a href="#临时密码的话，只要路由器不断电，可以一直使用而不会过期。" class="headerlink" title="- 临时密码的话，只要路由器不断电，可以一直使用而不会过期。"></a>- 临时密码的话，只要路由器不断电，可以<strong>一直</strong>使用而不会过期。</h3><h3 id="路由器断电后，如果开启路由器时临时密码已过期，需要将获取的密码填入路由器中（具体见步骤三）。"><a href="#路由器断电后，如果开启路由器时临时密码已过期，需要将获取的密码填入路由器中（具体见步骤三）。" class="headerlink" title="- 路由器断电后，如果开启路由器时临时密码已过期，需要将获取的密码填入路由器中（具体见步骤三）。"></a>- 路由器断电后，如果开启路由器时临时密码已过期，需要将获取的密码填入路由器中（具体见步骤三）。</h3>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/01/git/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Jaken Chan">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jaken Chan">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Jaken Chan" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/01/git/" itemprop="url">
-                  Git(一)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-01T00:00:00+08:00">
-                2016-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/08/01/git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/01/git/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一、建立本地库"><a href="#一、建立本地库" class="headerlink" title="一、建立本地库"></a>一、建立本地库</h1><h2 id="1-配置本地库的用户名和email。"><a href="#1-配置本地库的用户名和email。" class="headerlink" title="1.配置本地库的用户名和email。"></a>1.配置本地库的用户名和email。</h2><p><code>git config --global user.name &quot;Your Name&quot;
-git config --global user.email &quot;email@example.com&quot;</code></p>
-<h2 id="2-创建本地库。"><a href="#2-创建本地库。" class="headerlink" title="2.创建本地库。"></a>2.创建本地库。</h2><p><code>mkdir pre3 
-cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
-<p><code>pwd</code>    <em>查看本地库的位置</em></p>
-<p><code>git init</code>    <em>初始化本地库 / 把创建的这个本地库交给git管理</em></p>
-<h2 id="3-添加文件到本地库。"><a href="#3-添加文件到本地库。" class="headerlink" title="3.添加文件到本地库。"></a>3.添加文件到本地库。</h2><p><code>git add pre3.md</code>    <em>这个文件要已经位于本地库的目录里（根目录和子目录无所谓）</em></p>
-<h2 id="4-提交文件到本地库。"><a href="#4-提交文件到本地库。" class="headerlink" title="4.提交文件到本地库。"></a>4.提交文件到本地库。</h2><p><code>git commit -m &quot;wrote a pre3&quot;</code>    <em>-m “xxx” 的引号里填写的是对本次提交的文件的描述，可为任意内容</em></p>
-<h1 id="二、建立远程库"><a href="#二、建立远程库" class="headerlink" title="二、建立远程库"></a>二、建立远程库</h1><h2 id="1-创建coding-github账号。"><a href="#1-创建coding-github账号。" class="headerlink" title="1.创建coding/github账号。"></a>1.创建coding/github账号。</h2><h2 id="2-创建SSH-Key。"><a href="#2-创建SSH-Key。" class="headerlink" title="2.创建SSH Key。"></a>2.创建SSH Key。</h2><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>    <em>一路回车，可以不设密码，成功后可以在本地库的同级目录里找到.ssh文件夹，里面有id_rsa和id_rsa.pub两个文件，id_rsa是私钥，id_rsa.pub是公钥。</em></p>
-<h2 id="3-把SSH-Key的公匙添加到github。"><a href="#3-把SSH-Key的公匙添加到github。" class="headerlink" title="3.把SSH Key的公匙添加到github。"></a>3.把SSH Key的公匙添加到github。</h2><h2 id="4-创建远程库。"><a href="#4-创建远程库。" class="headerlink" title="4.创建远程库。"></a>4.创建远程库。</h2><h2 id="5-关联本地库和远程库。"><a href="#5-关联本地库和远程库。" class="headerlink" title="5.关联本地库和远程库。"></a>5.关联本地库和远程库。</h2><p><code>git remote add pre3 git@github.com:xxx/pre3.git</code>    <em>“git remote add pre3”中的”per3”是你对这个远程库的命名，可为任意值;”git@github.com:xxx/pre3.git”为你的远程库的地址</em></p>
-<h1 id="三、把本地库的所有内容推送到远程库上"><a href="#三、把本地库的所有内容推送到远程库上" class="headerlink" title="三、把本地库的所有内容推送到远程库上"></a>三、把本地库的所有内容推送到远程库上</h1><p><code>git push -u pre3 master</code>    <em>使用-u选项指定默认主机，这样以后就可以不加任何参数使用git push</em></p>
-<h1 id="四、对远程库的基本操作"><a href="#四、对远程库的基本操作" class="headerlink" title="四、对远程库的基本操作"></a>四、对远程库的基本操作</h1><h2 id="1-查看远程库名称。"><a href="#1-查看远程库名称。" class="headerlink" title="1.查看远程库名称。"></a>1.查看远程库名称。</h2><p><code>git remote</code></p>
-<h2 id="2-查看已经连接上的远程库。"><a href="#2-查看已经连接上的远程库。" class="headerlink" title="2.查看已经连接上的远程库。"></a>2.查看已经连接上的远程库。</h2><p><code>git remote -v</code></p>
-<h2 id="3-添加远程库。"><a href="#3-添加远程库。" class="headerlink" title="3.添加远程库。"></a>3.添加远程库。</h2><p><code>git remote add 你对远程库的命名 远程库地址</code>    <em>远程库地址不一定是https</em></p>
-<h2 id="4-移除远程库。"><a href="#4-移除远程库。" class="headerlink" title="4.移除远程库。"></a>4.移除远程库。</h2><p><code>git remote remove 远程库名</code></p>
-<p><strong>- 第一次使用Git 的 clone 或者 push 命令连接GitHub 时，会收到<br> 一个SSH警告，输入 <code>yes</code> 回车即可。</strong></p>
-<p><strong>-每次开启git bash后，都要手动进入自己的仓库。(cd 命令)。</strong>  </p>
-
-          
+这是我要下载视频的网站，从水印和详情中可以看到视频服务提供商是乐视云，但是视频基于flash,idm等下载器并不能下载。
+f12审查元素，搜索uu=,
+在代码中找到字段uu=xxxxxxxxxx&amp;vu=xxxxxxxxxx,图中的这个视频
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/07/letv_cloud/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1619,6 +1095,10 @@ cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
           
           </div>
@@ -1652,7 +1132,7 @@ cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
                src="/uploads/avatar.png"
                alt="Jaken Chan" />
           <p class="site-author-name" itemprop="name">Jaken Chan</p>
-          <p class="site-description motion-element" itemprop="description">whfh</p>
+          <p class="site-description motion-element" itemprop="description">you got a dream,you gotta protect it.</p>
         </div>
         <nav class="site-state motion-element">
         
@@ -1709,7 +1189,7 @@ cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1831,6 +1311,113 @@ cd pre3</code>    <em>创建名为“pre3”的空目录作为本地库</em></p>
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Rh39Oyw8GIPMXoxGxG158jGo-gzGzoHsz", "NTbf6zem5WWgRDIiet3EEtOr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
