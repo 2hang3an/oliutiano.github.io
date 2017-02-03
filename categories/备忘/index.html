@@ -112,8 +112,8 @@
     },
     algolia: {
       applicationID: '',
-      apiKey: '9cedadda63a8487179edff74bc57a913',
-      indexName: 'whfh',
+      apiKey: '',
+      indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"输入关键字进行搜索","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，共耗时${time} ms"}
     }
@@ -231,27 +231,12 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
 
 
     </div>
@@ -477,9 +462,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/02/01/aria2/" itemprop="url">
+            <a class="post-title-link" href="/2017/02/01/FinalSpeed/" itemprop="url">
               
-                <span itemprop="name">windows使用aria2</span>
+                <span itemprop="name">服务器安装FinalSpeed</span>
               
             </a>
         
@@ -505,9 +490,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/02/01/FinalSpeed/" itemprop="url">
+            <a class="post-title-link" href="/2017/02/01/aria2/" itemprop="url">
               
-                <span itemprop="name">服务器安装FinalSpeed</span>
+                <span itemprop="name">windows使用aria2</span>
               
             </a>
         
@@ -1020,19 +1005,6 @@
 
 
   
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
 
 
 </body>
